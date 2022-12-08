@@ -1,0 +1,17 @@
+<div class="card" style="width: 18rem;" *ngIf="maxPrice==null || maxPrice==0 || (maxPrice>0 && prod.price <maxPrice)">
+    <img src="/assets/pull.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title : {{prod.title}}</h5>
+      <p *ngIf="modifPrice"> Prix Modifier :{{modifPrice}}</p>
+
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Price : {{prod.price}}</li>
+      <li class="list-group-item"> Quantity :{{prod.quantity}}</li>
+      <li class="list-group-item">Like :{{prod.like}}</li>
+    </ul>
+    <div class="card-body">
+    <button class="btn btn-primary m-3" [disabled]="prod.quantity==0">buy</button>
+    <button class="btn btn-primary m-3" (click)="likeProd()" >like</button>
+    </div>
+  </div>
