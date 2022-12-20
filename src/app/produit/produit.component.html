@@ -1,24 +1,38 @@
-<!--<div class="container">
-  <h1>Liste des produit</h1>
-  <ul class="list-group">
+<div class="container">
+  <h1>Liste des produits</h1>
+  <!-- <ul class="list-group">
     <li class="list-group-item" *ngFor="let p of listProdcut; let index">
       id: {{ p.id }}, titre: {{ p.title }},
       <a [routerLink]="['detail', p.id]">détails</a>
     </li>
-  </ul>
+  </ul> -->
+  <input
+    type="number"
+    class="form-control"
+    placeholder="Prix maximal"
+    [(ngModel)]="priceMax"
+  />
 
-
-</div>-->
-<div class="container">
-<input type="number" class="form-control" placeholder="search..." [(ngModel)]="Prixmax">
+  <a  routerLink="/produit/add" >Ajouter un Produit</a
+          >
   <div class="row">
-  <app-produit-child class="col-3 m-3" 
-  *ngFor="let p of listProdcut; let index"
-   [prod]="p"
-   [maxPrice]="Prixmax"
-   [modifPrice]="Prixmax"
-   (likesEvent)="likeProduit($event)"
-    ></app-produit-child>
-</div>
-</div>
+    <app-produit-card
+      class="col-3 m-3"
+      *ngFor="let p of listProdcut; let index"
+      [maxPrice]="priceMax"
+      [modifiedPrice]="priceMax"
+      [prod]="p"
+      (likesEvent)="likeProduit($event)"
+    ></app-produit-card>
+  </div>
+  <app-produit-card hidden #pr></app-produit-card>
+  <button (click)="pr.start()" class="btn btn-primary m-3">
+    {{ pr.childText }}
+  </button>
+  <button (click)="startParent()" class="btn btn-success m-3">
+    {{ parentText }}
+  </button>
+  <button (click)="getZeroStock()" class="btn btn-danger m-3">Get Number of product with 0 quantity</button>
+  <div *ngIf="zeroStock" class="alert alert-danger"> <b>Number of product with 0 quantity: </b> {{zeroStock}} </div>
 
+</div>

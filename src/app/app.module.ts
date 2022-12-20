@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { AnnonceAppRoutingModule } from './annonce/annonce-app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -13,11 +14,12 @@ import { DetailComponent } from './detail/detail.component';
 import { AnnonceModule } from './annonce/annonce.module';
 import { AddProduitComponent } from './add-produit/add-produit.component';
 import { FormsModule } from '@angular/forms';
-import { FormProduitComponent } from './form-produit/form-produit.component';
-import { FormUserComponent } from './form-user/form-user.component';
-import { FProduitComponent } from './f-produit/f-produit.component';
-import { ProductCardComponent } from './product-card/product-card.component';
-import { ProduitChildComponent } from './produit-child/produit-child.component';
+import { ProduitCardComponent } from './produit-card/produit-card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
+import { ToDoListComponent } from './to-do-list/to-do-list.component';
+import { EditProduitComponent } from './edit-produit/edit-produit.component';
 
 @NgModule({
   declarations: [
@@ -29,17 +31,18 @@ import { ProduitChildComponent } from './produit-child/produit-child.component';
     PagenotfoundComponent,
     DetailComponent,
     AddProduitComponent,
-    FormProduitComponent,
-    FormUserComponent,
-    FProduitComponent,
-    ProductCardComponent,
-    ProduitChildComponent
+    ProduitCardComponent,
+    ToDoListComponent,
+    EditProduitComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AnnonceModule,
     AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]

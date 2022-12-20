@@ -1,0 +1,42 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "products": [
+    {
+      "id": 3,
+      "title": "T-s111",
+      "price": 11,
+      "quantity": 8,
+      "like": 0
+    },
+    {
+      "id": 4,
+      "title": "aaaaa",
+      "price": 12,
+      "quantity": 1,
+      "like": 0
+    },
+    {
+      "id": 5,
+      "title": "ouss",
+      "price": 11,
+      "quantity": 10,
+      "like": 0
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
